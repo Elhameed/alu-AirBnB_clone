@@ -2,6 +2,7 @@
 
 import uuid
 from datetime import datetime
+from models import storage
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
@@ -27,6 +28,7 @@ class BaseModel:
 
     def save(self):
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         obj_dict = self.__dict__.copy()
