@@ -19,7 +19,7 @@ class FileStorage:
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as file:
             json.dump(save_dict, file)
 
-    def reload(self):
+    def reload(self, BaseModel):
         try:
             with open(FileStorage.__file_path, 'r', encoding='utf-8') as file:
                 load_dict = json.load(file)
